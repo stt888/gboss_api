@@ -1,0 +1,36 @@
+{
+  "name": "gboss_api",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    
+    "axios": "^0.18.0",
+    "blueimp-md5": "^2.10.0",
+    "body-parser": "^1.18.3",
+    "browser-cookies": "^1.2.0",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "prop-types": "^15.7.2",
+    
+    "socket.io": "^2.2.0"
+  },
+  "scripts": {
+    
+    "server": "nodemon server/server.js"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "babel-plugin-import": "^1.11.0",
+    "mongoose": "^5.3.14"
+    
+  }
+}
