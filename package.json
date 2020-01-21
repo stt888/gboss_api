@@ -16,7 +16,7 @@
     "socket.io": "^2.2.0"
   },
   "scripts": {
-    "server": "node server/server.js"
+    "start": "node server/server.js"
   },
   "eslintConfig": {
     "extends": "react-app"
