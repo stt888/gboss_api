@@ -59,8 +59,12 @@ io.on("connection", function(socket) {
 });
 
 //register root router (app's use() function)
-app.use("/", function(req, res) {
-  res.send("hello server.");
+// app.use("/", function(req, res) {
+//   res.send("hello server.");
+// });
+
+app.get('/', function(req, res){
+    res.send("hello server.");
 });
 
 app.use(cors()); // Add a response header to tell the browser to allow cross domain
