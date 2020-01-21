@@ -16,8 +16,7 @@
     "socket.io": "^2.2.0"
   },
   "scripts": {
-    
-    "server": "nodemon server/server.js"
+    "server": "node server/server.js"
   },
   "eslintConfig": {
     "extends": "react-app"

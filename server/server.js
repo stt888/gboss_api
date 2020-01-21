@@ -58,22 +58,18 @@ io.on("connection", function(socket) {
   });
 });
 
-// register root router (app's use() function)
-// app.use('/', function(req, res){
-//     res.send('hello server.')
-// })
+//register root router (app's use() function)
+app.use("/", function(req, res) {
+  res.send("hello server.");
+});
+
 app.use(cors()); // Add a response header to tell the browser to allow cross domain
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/api", appRouter);
 
-// bind listener
-// app.listen('3000', function(){
-//     console.log('server start on port: 3000')
-// })
-
 // bind listener. start server not app
-server.listen("3000", () => {
-  console.log("server running at port: 3000");
+server.listen(process.env.PORT || "3000", () => {
+  console.log(`server running at port: ${process.env.PORT}`);
 });
