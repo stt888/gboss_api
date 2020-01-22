@@ -63,9 +63,9 @@ io.on("connection", function(socket) {
 //   res.send("hello server.");
 // });
 
-app.get('/', function(req, res){
-    res.send("hello server.");
-});
+// app.get('/', function(req, res){
+//     res.send("hello server.");
+// });
 
 app.use(cors()); // Add a response header to tell the browser to allow cross domain
 app.use(cookieParser());
