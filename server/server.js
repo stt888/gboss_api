@@ -10,6 +10,17 @@ const ChatModel = require("./models").getModel("chat");
 // execute express() and obtain object
 const app = express();
 
+
+// Add a response header to tell the browser to allow cross domain
+// app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:3000',
+    methods: 'GET,PUT,POST,DELETE,OPTIONS',
+    optionsSuccessStatus: 200 ,
+    Headers: Content-Type, Authorization,
+    credentials: true
+})); 
+
 // get server object
 const server = require("http").Server(app);
 // get IO object
@@ -63,15 +74,6 @@ app.get('/', function(req, res){
     res.send("hello server.");
 });
 
-//app.options('http://http://localhost:3000', cors())
-
-// Add a response header to tell the browser to allow cross domain
-app.use(cors({
-    origin: 'http://http://localhost:3000',
-    methods: 'GET,PUT,POST,DELETE,OPTIONS',
-    optionsSuccessStatus: 200 ,
-    credentials: true
-})); 
 
 app.use(cookieParser());
 app.use(bodyParser.json());
