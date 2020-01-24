@@ -78,7 +78,7 @@ app.get('/', function(req, res){
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use("/api", appRouter);
+app.use("/", appRouter);
 
 // bind listener. start server not app
 server.listen(process.env.PORT || 3000, () => {
