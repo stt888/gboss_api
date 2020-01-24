@@ -12,14 +12,14 @@ const app = express();
 
 
 // Add a response header to tell the browser to allow cross domain
-// app.use(cors());
-app.use(cors({
-    origin: "*",
-    methods: 'GET,PUT,POST,DELETE,OPTIONS',
-    optionsSuccessStatus: 200 ,
-    allowedHeaders: 'Content-Type,Authorization',
-    credentials: true
-})); 
+app.use(cors());
+// app.use(cors({
+//     origin: "*",
+//     methods: 'GET,PUT,POST,DELETE,OPTIONS',
+//     optionsSuccessStatus: 200 ,
+//     allowedHeaders: 'Content-Type,Authorization',
+//     credentials: true
+// })); 
 
 // get server object
 const server = require("http").Server(app);
