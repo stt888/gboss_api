@@ -2,7 +2,9 @@
 
 // connect to database
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost:27017/gboss', { useNewUrlParser: true })
+//mongoose.connect('mongodb://localhost:27017/gboss', { useNewUrlParser: true })
+// connect to database on mLab
+mongoose.connect(process.env.PROD_MONGODB, { useNewUrlParser: true })
 const conn = mongoose.connection
 conn.on('connected', function(){
     console.log('connect successfully')
