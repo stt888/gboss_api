@@ -14,7 +14,7 @@ const app = express();
 // Add a response header to tell the browser to allow cross domain
 // app.use(cors());
 app.use(cors({
-    origin: "*",
+    origin: "http://localhost:3000",
     methods: 'GET,PUT,POST,DELETE,OPTIONS',
     optionsSuccessStatus: 200 ,
     allowedHeaders: 'Content-Type,Authorization',
