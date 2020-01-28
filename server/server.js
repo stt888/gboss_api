@@ -18,8 +18,7 @@ app.use(cors({
     methods: 'GET,PUT,POST,DELETE,OPTIONS',
     optionsSuccessStatus: 200 ,
     allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept,Authorization',
-    credentials: true,
-    MaxAge: 86400
+    credentials: true
 })); 
 
 // get server object
