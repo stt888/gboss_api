@@ -38,6 +38,7 @@ router.post('/login', function(req, res){
     UserModel.findOne({name, pwd: md5(pwd)}, _filter, function(err, user){
         if(user){
             res.cookie('userid', user._id)
+            console.log('server cookie'+ res.cookie('userid', user._id))
             res.json({code:0, data:user})
         }else{
             res.json({code:1, msg: 'user name and password do not exist.'})

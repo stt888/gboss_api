@@ -17,8 +17,9 @@ app.use(cors({
     origin: "http://localhost:3000",
     methods: 'GET,PUT,POST,DELETE,OPTIONS',
     optionsSuccessStatus: 200 ,
-    allowedHeaders: 'Content-Type,Authorization',
-    credentials: true
+    allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept,Authorization',
+    credentials: true,
+    MaxAge: 86400
 })); 
 
 // get server object
