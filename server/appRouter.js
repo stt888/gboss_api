@@ -24,7 +24,7 @@ router.post('/register', function(req, res){
         }else {
             const userModel = new UserModel({name, pwd: md5(pwd), type})
             userModel.save(function (err, user) {
-                res.cookie('userid', user._id)
+                res.cookie('userid', user._id, {maxAge: 900000, httpOnly: true})
                 res.send({code:0, data: {_id: user._id, name, type}})
             })
         }
@@ -37,7 +37,7 @@ router.post('/login', function(req, res){
 
     UserModel.findOne({name, pwd: md5(pwd)}, _filter, function(err, user){
         if(user){
-            res.cookie('userid', user._id)
+            res.cookie('userid', user._id, {maxAge: 900000, httpOnly: true})
             console.log('server cookie'+ res.cookie('userid', user._id))
             res.json({code:0, data:user})
         }else{

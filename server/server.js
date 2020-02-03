@@ -14,12 +14,17 @@ const app = express();
 // Add a response header to tell the browser to allow cross domain
 // app.use(cors());
 app.use(cors({
-    origin: "http://localhost:3000",
+    origin: process.env.CORS_ALLOW_ORIGIN||"http://localhost:3000",
     methods: 'GET,PUT,POST,DELETE,OPTIONS',
     optionsSuccessStatus: 200 ,
     allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept,Authorization',
     credentials: true
 })); 
+
+app.use(cookieParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use("/", appRouter);
 
 // get server object
 const server = require("http").Server(app);
@@ -74,11 +79,6 @@ app.get('/', function(req, res){
     res.send("hello server.");
 });
 
-
-app.use(cookieParser());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use("/", appRouter);
 
 // bind listener. start server not app
 server.listen(process.env.PORT || 3000, () => {
