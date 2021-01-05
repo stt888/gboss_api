@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "blueimp-md5": "^2.10.0",
     "body-parser": "^1.18.3",
     "browser-cookies": "^1.2.0",
